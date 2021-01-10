@@ -7,8 +7,7 @@ var c = [4,8]
 
 console.log("B: X=" + b[0] + " Y=" + b[1])
 console.log("C: X=" + c[0] + " Y=" + c[1])
-console.log("")
-console.log("Proceso de B:")
+console.log("\nProceso de B:")
 
 while (b[0] !== c[0]){
     if (b[0] < c[0]){
