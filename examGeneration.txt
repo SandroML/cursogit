@@ -2,22 +2,22 @@ Algoritmia
 1. Demuestra que la siguiente cadena "geeksforgeeks" no es un palíndromo.
 
 function isPalindrome(string){
-	let reverseString = "";
-	let cloneString = "";
+    let reverseString = "";
+    let cloneString = "";
 
-	for(let i=0; i<string.length; i++){
-		if (string.charAt(i) !== ' ' && string.charAt(i) !== ',' && string.charAt(i) !== '.'){
-			cloneString = cloneString + string.charAt(i);
-		}
-	}
+    for(let i=0; i<string.length; i++){
+        if (string.charAt(i) !== ' ' && string.charAt(i) !== ',' && string.charAt(i) !== '.'){
+            cloneString = cloneString + string.charAt(i);
+        }
+    }
 
-	cloneString = cloneString.toLowerCase();
+    cloneString = cloneString.toLowerCase();
 
-	for(let i=cloneString.length; i>=0; i--){
-		reverseString = reverseString + cloneString.charAt(i);
-	}
+    for(let i=cloneString.length; i>=0; i--){
+        reverseString = reverseString + cloneString.charAt(i);
+    }
 	
-	cloneString === reverseString ?
+    cloneString === reverseString ?
     console.log(`"${string}" es un palíndromo`) :
     console.log(`"${string}" no es un palíndromo`)	
 }
