@@ -1,0 +1,72 @@
+Algoritmia
+1. Demuestra que la siguiente cadena "geeksforgeeks" no es un palíndromo.
+
+function isPalindrome(string){
+	let reverseString = "";
+	let cloneString = "";
+
+	for(let i=0; i<string.length; i++){
+		if (string.charAt(i) !== ' ' && string.charAt(i) !== ',' && string.charAt(i) !== '.'){
+			cloneString = cloneString + string.charAt(i);
+		}
+	}
+
+	cloneString = cloneString.toLowerCase();
+
+	for(let i=cloneString.length; i>=0; i--){
+		reverseString = reverseString + cloneString.charAt(i);
+	}
+	
+	cloneString === reverseString ?
+    console.log(`"${string}" es un palíndromo`) :
+    console.log(`"${string}" no es un palíndromo`)	
+}
+
+Css
+2. Diferencias entre flexbox y grid.
+    -Grid trabaja en dos dimensiones, por lo que es posible manejar tanto las filas como las columnas, mientras que si trabajamos con flexbox solo podremos manejar una dimensión.
+    -Cuando trabajamos con Grid este se define mayormente en el elemento padre, mientras que en flexbox la mayor parte del desarrollo se realiza en los hijos.
+
+Html
+1. Crea un div.
+    div = document.createElement('div')
+
+2. Crea un svg.
+    document.createElementNS("http://www.w3.org/2000/svg","svg")
+
+3. Agrega una clase al div creado en el punto 1.
+    div.classList.add('newClass')
+
+4. Agrega un estilo que cambie la propiedad color al punto 1.
+    div.style.setProperty('color','red')
+
+5. Agrega un atributo id al punto 1.
+    div.setAttribute('id','newID')
+
+6. Crea una página en blanco y agrega al body el div con "hello world".
+    text = document.createTextNode('hello world')
+	div.appendChild(text)
+    document.body.appendChild(div)
+    
+7. Crea un nuevo div y agrégalo como hijo al punto 1 antes de "hello world".
+    child = document.createElement('div')
+    div.insertBefore(child, text)
+
+8. Dime los nodos que tiene el primer div.
+    div.childNodes
+
+9. Dime los elementos que tiene el primer div.
+    div.children
+
+10. Busca todos los div de la página.
+    document.querySelectorAll('div')
+
+11. Busca los div que contienen la clase agregada al punto 3.
+    document.querySelectorAll('.newClass')
+    o
+    document.getElementByClassName('newClass')
+    
+12. Busca los div que tienen el id agregado en punto 5.
+    document.querySelectorAll('#newID')
+    o
+    document.getElementById('newID')
