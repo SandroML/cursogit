@@ -8,9 +8,9 @@ There are 12 people on an island. One person weighs less than the others, 11 peo
     This is a Layton!! :D
 */
 
-var people = [80,80,80,72,80,80,80,80,80,80,80,80];
+var people = [80, 80, 80, 72, 80, 80, 80, 80, 80, 80, 80, 80];
 
-var mid = people.length/2;
+var mid = people.length / 2;
 var total = people.length;
 var left;
 var right;
@@ -19,10 +19,10 @@ var peopleLeft = [];
 var peopleRight = [];
 var end = [];
 
-for(i2=1; i2<4; i2++){
-    console.log("Balanza " + i2 +":");
+for (i2 = 1; i2 < 4; i2++) {
+    console.log("Balanza " + i2 + ":");
 
-    mid = people.length/2;
+    mid = people.length / 2;
     total = people.length;
 
     left = 0;
@@ -30,54 +30,54 @@ for(i2=1; i2<4; i2++){
     peopleLeft = [];
     peopleRight = [];
 
-    end[0] = people[0];
-    end[1] = people[1];
-    end[2] = people[2];
+    for (let i = 0; i < 3; i++) {
+        end.push(people[i])
+    }
 
-    var min=0;
+    var min = 0;
 
-    for(i=0; i<total; i++){
-        if(i < mid){
+    for (i = 0; i < total; i++) {
+        if (i < mid) {
             left = left + people[i];
             peopleLeft.push(people[i]);
         }
-        else{
+        else {
             right = right + people[i];
             peopleRight.push(people[i]);
         }
     }
 
-    if (left < right){
+    if (left < right) {
         groupWin = "izquierda";
         people = peopleLeft;
     }
-    else{
+    else {
         groupWin = "derecha";
         people = peopleRight;
     }
 
-    if(i2===1){
-        console.log("Empezamos con "+ total + ", ponemos a " + mid + " en un lado y a " + mid + " en otro.");
-        console.log("Los de la izquierda pesan "+ left + "kg y los de la derecha " + right +"kg, por lo que seguimos al grupo de la " + groupWin + ".");
+    if (i2 === 1) {
+        console.log("Empezamos con " + total + ", ponemos a " + mid + " en un lado y a " + mid + " en otro.");
+        console.log("Los de la izquierda pesan " + left + "kg y los de la derecha " + right + "kg, por lo que seguimos al grupo de la " + groupWin + ".");
         console.log("");
-    } else if (i2===2){
-        console.log("Ahora quedan " + total +", ponemos a " + mid + " en un lado y a " + mid + " en otro.");
-        console.log("Los de la izquierda pesan "+ left + "kg y los de la derecha " + right +"kg, por lo que seguimos al grupo de la " + groupWin + ".");
+    } else if (i2 === 2) {
+        console.log("Ahora quedan " + total + ", ponemos a " + mid + " en un lado y a " + mid + " en otro.");
+        console.log("Los de la izquierda pesan " + left + "kg y los de la derecha " + right + "kg, por lo que seguimos al grupo de la " + groupWin + ".");
         console.log("");
     } else {
         console.log("Ahora quedan " + total + ", ponemos a una persona a un lado de la balanza y a otra al otro lado, dejando a uno fuera.");
         console.log("El de la izquierda pesa " + end[0] + "kg y el de la derecha " + end[1] + "kg, mientras que el que ha quedado fuera es el que pesa " + end[2] + "kg (aunque no sepamos este dato).");
 
-        if(end[0]<end[1]){
+        if (end[0] < end[1]) {
             min = end[0];
         }
-        else if (end[1]<end[0]){
+        else if (end[1] < end[0]) {
             min = end[1];
         }
-        else{
+        else {
             min = end[2];
         }
 
         console.log("El isleño que pesa menos es el que pesa " + min + "kg.");
-    }       
+    }
 }
