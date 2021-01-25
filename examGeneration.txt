@@ -64,7 +64,7 @@ Html
 11. Busca los div que contienen la clase agregada al punto 3.
     document.querySelectorAll('.newClass')
     o
-    document.getElementByClassName('newClass')
+    document.getElementsByClassName('newClass')
     
 12. Busca los div que tienen el id agregado en punto 5.
     document.querySelectorAll('#newID')
